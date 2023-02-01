@@ -1,44 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-
+import MenuItem from "./MenuItem";
 import Data from "../public-menu.json";
+import ItemInstance from "./ItemInstance";
+import AlergyInfo from "./AlergyInfo";
+
 function MenuBox() {
   return (
     <div className="grid grid-row-4 justify-items-center items-center p-4 space-y-4">
-      <div className="text-4xl font-semibold font-Nunito">
-        {Data.map((post) => {
-          return (
-            <div key={post._id}>{post.type === "menu" && post.name.en}</div>
-          );
-        })}
-      </div>
-      <h2 className="text-2xl font-Nunito ">
+      <div className="h-96 min-w-[120px]">
+        <div className="text-4xl font-semibold font-Nunito">
+          {Data.map((post) => {
+            return (
+              <div key={post._id}>{post.type === "menu" && post.name.en}</div>
+            );
+          })}
+        </div>
+        <h2 className="text-2xl font-Nunito ">
+          {Data.map((post) => {
+            return (
+              <div key={post._id}>
+                {post.type === "menu" && post.description.en}
+              </div>
+            );
+          })}
+        </h2>
+        <h2 className="text-xl font-Nunito text-gray-400">
+          {Data.map((post) => {
+            return (
+              <div key={post._id}>{post.type === "menu" && post.note?.en}</div>
+            );
+          })}
+        </h2>
         {Data.map((post) => {
           return (
             <div key={post._id}>
-              {post.type === "menu" && post.description.en}
+              {/*Ternary operator is used to conditionally set the src attribute, depending if the*/}
+              {post.children.map((c) => (
+                <div key={post._id}>
+                  {/*c.image actually works, but I don't have access to it thus I am using dummy images here*, simply change src with c.image I can't because I don't have access to it !*/}
+                  {c.type === "section" && c.parentId === post._id ? (
+                    <Image
+                      src={"https://picsum.photos/563/120"}
+                      alt={""}
+                      width={563}
+                      height={120}
+                      className="rounded-lg"
+                    />
+                  ) : (
+                    void 0
+                  )}
+
+                  <MenuItem names={c.name} description={c.description} />
+                  {c.children.map((i) => (
+                    <div className="">
+                      <ItemInstance
+                        name={i.name}
+                        description={i.description}
+                        price={i.price}
+                      />
+                      {i.ingredientWarnings.map((alg) => (
+                        <div className="grid grid-cols-3 content-start">
+                          <AlergyInfo alergy={alg} />
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           );
         })}
-      </h2>
-      <h2 className="text-xl font-Nunito text-gray-400">
-        {Data.map((post) => {
-          return (
-            <div key={post._id}>{post.type === "menu" && post.note?.en}</div>
-          );
-        })}
-      </h2>
-      {/*The image component has to change, becase in it's current version this is not mobile friendly*/}
-      <div className="relative h-96 min-w-[120px]">
-        const image
-        <Image
-          src={"https://picsum.photos/563/120"}
-          alt={""}
-          width={563}
-          height={120}
-          className="rounded-lg"
-        />
       </div>
+
+      {/*The image component has to change, becase in it's current version this is not mobile friendly*/}
     </div>
   );
 }
