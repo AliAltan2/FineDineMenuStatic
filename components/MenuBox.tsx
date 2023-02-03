@@ -7,21 +7,17 @@ import ItemInstance from "./ItemInstance";
 function MenuBox() {
   return (
     <div className="grid grid-row-4 justify-items-center items-center p-4 space-y-4">
-      <div className="h-96 min-w-[120px] ">
-        <div className="text-4xl font-semibold font-Nunito">
+      <div className="h-96 min-w-[120px]">
+        <div className="text-4xl font-semibold font-Nunito text-center">
           {Data.map((post) => {
             return (
-              <div
-                className="flex items-center text-4xl font-semibold font-Nunito"
-                key={post._id}
-              >
+              <div className="" key={post._id}>
                 {post.type === "menu" && post.name.en}
               </div>
-              // this is a dummy comment
             );
           })}
         </div>
-        <h2 className="flex items-center ">
+        <h2 className="text-center ">
           {Data.map((post) => {
             return (
               <div className="text-2xl font-Nunito" key={post._id}>
@@ -30,7 +26,7 @@ function MenuBox() {
             );
           })}
         </h2>
-        <h2 className="text-xl font-Nunito text-gray-400">
+        <h2 className="text-center text-xl font-Nunito text-gray-400">
           {Data.map((post) => {
             return (
               <div key={post._id}>{post.type === "menu" && post.note?.en}</div>
@@ -59,20 +55,7 @@ function MenuBox() {
                   <MenuItem names={c.name} description={c.description} />
                   {c.children.map((i) => (
                     <div key={i._id} className="items-center gap-2">
-                      <ItemInstance
-                        name={i.name}
-                        description={i.description}
-                        price={i.price}
-                        alergy={i.ingredientWarnings?.map(
-                          (
-                            op: string //not working, the map function doesn't work because name.ingfirientWarnings is "undefined"
-                          ) => (
-                            <h3 key={i._id} className="flex">
-                              {op}
-                            </h3>
-                          )
-                        )}
-                      />
+                      <ItemInstance item={i} />
 
                       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-500"></hr>
                     </div>
