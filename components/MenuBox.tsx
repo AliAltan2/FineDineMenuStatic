@@ -3,7 +3,6 @@ import Image from "next/image";
 import MenuItem from "./MenuItem";
 import Data from "../public-menu.json";
 import ItemInstance from "./ItemInstance";
-import AlergyInfo from "./AlergyInfo";
 
 function MenuBox() {
   return (
@@ -12,14 +11,19 @@ function MenuBox() {
         <div className="text-4xl font-semibold font-Nunito">
           {Data.map((post) => {
             return (
-              <div key={post._id}>{post.type === "menu" && post.name.en}</div>
+              <div
+                className="flex items-center text-4xl font-semibold font-Nunito"
+                key={post._id}
+              >
+                {post.type === "menu" && post.name.en}
+              </div>
             );
           })}
         </div>
         <h2 className="text-2xl font-Nunito ">
           {Data.map((post) => {
             return (
-              <div key={post._id}>
+              <div className="flex items-center" key={post._id}>
                 {post.type === "menu" && post.description.en}
               </div>
             );
@@ -53,17 +57,23 @@ function MenuBox() {
 
                   <MenuItem names={c.name} description={c.description} />
                   {c.children.map((i) => (
-                    <div className="">
+                    <div key={i._id} className="items-center gap-2">
                       <ItemInstance
                         name={i.name}
                         description={i.description}
                         price={i.price}
+                        alergy={i.ingredientWarnings?.map(
+                          (
+                            op: string //not working, the map function doesn't work because name.ingfirientWarnings is "undefined"
+                          ) => (
+                            <h3 key={i._id} className="flex">
+                              {op}
+                            </h3>
+                          )
+                        )}
                       />
-                      {i.ingredientWarnings.map((alg) => (
-                        <div className="grid grid-cols-3 content-start">
-                          <AlergyInfo alergy={alg} />
-                        </div>
-                      ))}
+
+                      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-500"></hr>
                     </div>
                   ))}
                 </div>
