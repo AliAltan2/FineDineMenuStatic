@@ -7,7 +7,7 @@ import ItemInstance from "./ItemInstance";
 function MenuBox() {
   return (
     <div className="grid grid-row-4 justify-items-center items-center p-4 space-y-4">
-      <div className="h-96 min-w-[120px]">
+      <div className="h-96 min-w-[120px] ">
         <div className="text-4xl font-semibold font-Nunito">
           {Data.map((post) => {
             return (
@@ -20,10 +20,10 @@ function MenuBox() {
             );
           })}
         </div>
-        <h2 className="text-2xl font-Nunito ">
+        <h2 className="flex items-center ">
           {Data.map((post) => {
             return (
-              <div className="flex items-center" key={post._id}>
+              <div className="text-2xl font-Nunito" key={post._id}>
                 {post.type === "menu" && post.description.en}
               </div>
             );
