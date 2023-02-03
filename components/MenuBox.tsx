@@ -17,6 +17,7 @@ function MenuBox() {
               >
                 {post.type === "menu" && post.name.en}
               </div>
+              // this is a dummy comment
             );
           })}
         </div>
