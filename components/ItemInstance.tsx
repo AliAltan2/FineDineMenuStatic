@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import * as icons from "./icons/index";
+
 //Utku reizin attığı linke bak yeniden https://codesandbox.io/s/old-dust-3tpvve?file=/src/App.js
 
 function ItemInstance(item: any) {
@@ -17,8 +17,8 @@ function ItemInstance(item: any) {
             (
               op: string //not working, the map function doesn't work because name.ingfirientWarnings is "undefined"
             ) => (
+              // svgler bu div'e giricek
               <div className="flex">
-                <Image src={} alt={""} width={24} height={24} />
                 <h3 key={op}>{op}</h3>
               </div>
             )
