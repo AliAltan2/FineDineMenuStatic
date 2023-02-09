@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
+import Icon from "../components/icons/icon";
 
-//Utku reizin attığı linke bak yeniden https://codesandbox.io/s/old-dust-3tpvve?file=/src/App.js
+//Utkunun attığı linke bak yeniden https://codesandbox.io/s/old-dust-3tpvve?file=/src/App.js
 
 function ItemInstance(item: any) {
   return (
@@ -19,6 +20,7 @@ function ItemInstance(item: any) {
             ) => (
               // svgler bu div'e giricek
               <div className="flex">
+                <Icon name={`${op}`} />
                 <h3 key={op}>{op}</h3>
               </div>
             )
