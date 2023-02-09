@@ -20,7 +20,8 @@ function ItemInstance(item: any) {
             ) => (
               // svgler bu div'e giricek
               <div className="flex">
-                <Icon name={`${op}`} />
+                {console.log(typeof op)}
+
                 <h3 key={op}>{op}</h3>
               </div>
             )
