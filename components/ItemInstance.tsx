@@ -19,7 +19,7 @@ function ItemInstance(item: any) {
               op: string //not working, the map function doesn't work because name.ingfirientWarnings is "undefined"
             ) => (
               // svgler bu div'e giricek
-              <div className="flex">
+              <div key={op} className="flex">
                 {op && <Icon name={op}></Icon>}
                 <h3>{op}</h3>
               </div>
