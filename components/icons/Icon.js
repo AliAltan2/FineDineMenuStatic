@@ -34,6 +34,7 @@ import Fresh from "./ico_fresh.svg";
 import Frozen from "./ico_frozen.svg";
 import Garlic from "./ico_garlic.svg";
 import Gluten from "./ico_gluten.svg";
+import GlutenFree from "./ico_gluten_free.svg";
 import GmoFree from "./ico_gmo_free.svg";
 import Halal from "./ico_halal.svg";
 import HazelnutFree from "./ico_hazelnut_free.svg";
@@ -77,6 +78,7 @@ import Vinegar from "./ico_vinegar.svg";
 import Vitality from "./ico_vitality.svg";
 
 const iconTypes = {
+  "gluten-free": GlutenFree,
   sustainability: Sustainability,
   "truffle-oil-free": TruffleOilFree,
   "truffle-oil": TruffleOil,

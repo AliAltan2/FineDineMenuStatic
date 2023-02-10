@@ -13,7 +13,7 @@ function ItemInstance(item: any) {
           {item?.item?.name?.en}
         </h2>
         <h3 className=" text-sm font-Nunito ">{item?.item?.description?.en}</h3>
-        <div className=" text-sm flex gap-4 font-Nunito">
+        <div className="text-sm flex items-center gap-4 font-Nunito">
           {item?.item?.ingredientWarnings?.map(
             (
               op: string //not working, the map function doesn't work because name.ingfirientWarnings is "undefined"
@@ -21,7 +21,7 @@ function ItemInstance(item: any) {
               // svgler bu div'e giricek
               <div key={op} className="flex">
                 {op && <Icon name={op}></Icon>}
-                <h3>{op}</h3>
+                <h3 className="px-1">{op}</h3>
               </div>
             )
           )}
