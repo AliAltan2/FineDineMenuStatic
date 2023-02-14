@@ -6,7 +6,7 @@ import ItemInstance from "./ItemInstance";
 
 function MenuBox() {
   return (
-    <div className="grid grid-row-4 justify-items-center items-center p-4 space-y-4">
+    <div className="grid justify-items-center items-center p-2">
       <div className="h-96 min-w-[120px]">
         <div className="text-4xl font-semibold font-Nunito text-center">
           {Data.map((post) => {
@@ -49,12 +49,10 @@ function MenuBox() {
                   ) : (
                     void 0
                   )}
-
                   <MenuItem names={c.name} description={c.description} />
                   {c.children.map((i) => (
-                    <div key={i._id} className="items-center gap-2">
+                    <div key={i._id} className="items-center">
                       <ItemInstance item={i} />
-
                       {/**/}
                     </div>
                   ))}

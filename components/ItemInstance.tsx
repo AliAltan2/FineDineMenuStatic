@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import Icon from "../components/icons/icon";
-import Prices from "../components/Prices";
 
 //Utkunun attığı linke bak yeniden https://codesandbox.io/s/old-dust-3tpvve?file=/src/App.js
 
@@ -51,26 +50,9 @@ function ItemInstance(item: any) {
           </div>
         </div>
       </div>
-      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-500"></hr>
+      <hr className="h-px my-8 bg-gray-200 border-0"></hr>
     </div>
   );
-}
-{
-  /*{i.ingredientWarnings?.map(
-                          (
-                            op: string //not working, the map function doesn't work because name.ingfirientWarnings is "undefined"
-                          ) => (
-                            <div className="flex">
-                              <Image
-                                src={`ico_${op}.svg`}
-                                alt={""}
-                                width={24}
-                                height={24}
-                              />
-                              <h3 key={i._id}>{op}</h3>
-                            </div>
-                          )
-                        )}*/
 }
 
 export default ItemInstance;
