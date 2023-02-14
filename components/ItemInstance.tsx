@@ -14,40 +14,37 @@ function ItemInstance(item: any) {
           <h2 className="pt-2 text-base font-Nunito font-bold">
             {item?.item?.name?.en}
           </h2>
-          <h3 className=" text-sm font-Nunito ">
+          <h3 className=" text-sm font-Nunito text-ellipsis">
             {item?.item?.description?.en}
           </h3>
           <div className="text-sm flex items-center gap-4 font-Nunito">
-            {item?.item?.ingredientWarnings?.map(
-              (
-                op: string //not working, the map function doesn't work because name.ingfirientWarnings is "undefined"
-              ) => (
-                // svgler bu div'e giricek
-                <div
-                  key={op}
-                  className="flex space-x-1 items-center justify-center"
-                >
-                  {op && <Icon name={op}></Icon>}
-                  <h3 className="px-1">{op}</h3>
-                </div>
-              )
-            )}
+            {item?.item?.ingredientWarnings?.map((op: string) => (
+              <div
+                key={op}
+                className="grid grid-flow-col gap-x-0.5 space-x-0 items-center justify-center capitalize"
+              >
+                {op && <Icon name={op}></Icon>}
+                <h3 className="col-span-2 px-1 text-xs">{op}</h3>
+                {/*There is no 'new' icon I can add or a data piece that would define the existance of this new svg thus I did not made such loop*/}
+              </div>
+            ))}
           </div>
           <div>
-            <h3 className="grid grid-flow-col gap-x-2 pt-2 text-sm font-semibold font-Nunito">
+            <h3 className="grid grid-flow-col pt-2 text-sm font-Nunito">
               {item?.item?.prices?.map((itemPriceInfo: any) => (
-                <div className=" flex flex-grow text-black gap-x-2">
+                <div className=" flex flex-grow items-center text-black text-sm gap-x-1 capitalize">
                   {itemPriceInfo.definition.en}
                   <div className="text-[#A874F2]">
                     {/*{itemPriceInfo.currencies?.map((localPricing: any) => (
                       <a>{localPricing.symbol}</a>
-                    ))}*/}{" "}
+                    ))}*/}
                     {/*This piece of code is not reliably working due to data sometimes has different currencies and sometimes has no such thing as currencies
                     thus I have to take further assistance for this part, for now it has to be hard coded, but logically this works*/}
-                    <a>$</a>
+                    $
                   </div>
-                  <div className="text-[#A874F2]">{itemPriceInfo.value}</div>
-                  {/*I need definiton, and map into currencies so I can pull currency type and symbol*/}
+                  <div className="text-[#A874F2] text-base ">
+                    {itemPriceInfo.value}
+                  </div>
                 </div>
               ))}
             </h3>

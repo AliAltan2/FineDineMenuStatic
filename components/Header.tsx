@@ -12,7 +12,7 @@ function Header() {
         className="h-[105px] w-[132px] flex flex-wrap content-around"
       />
       <h2 className="pt-4  font-Nunito font-bold">Gastronome</h2>
-      <p className="pt-1 text-sm font-Nunito">
+      <p className="pt-1 text-sm font-Nunito w-1/4 text-center">
         Lorem ipsum dolor sit amet, lorem iriure nominavi eu eos. Quo no duis
         commune.
       </p>

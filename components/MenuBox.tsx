@@ -11,9 +11,7 @@ function MenuBox() {
         <div className="text-4xl font-semibold font-Nunito text-center">
           {Data.map((post) => {
             return (
-              <div className="" key={post._id}>
-                {post.type === "menu" && post.name.en}
-              </div>
+              <div key={post._id}>{post.type === "menu" && post.name.en}</div>
             );
           })}
         </div>
@@ -57,7 +55,7 @@ function MenuBox() {
                     <div key={i._id} className="items-center gap-2">
                       <ItemInstance item={i} />
 
-                      {/*<hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-500"></hr>*/}
+                      {/**/}
                     </div>
                   ))}
                 </div>

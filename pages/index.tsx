@@ -23,6 +23,12 @@ const Home: NextPage = () => {
       <MenuBox />
       {/* A Food item, Contains Name, explanation, Price Medium Price Large Price and dietery info, may contain image */}
       {/*<MenuItem menuData={menuData} />*/}
+      {/* TODO 
+        Hook up images to real images,
+        Ask for a proper look, try to make it as close to the design as possible
+        Try to fix the lines , they seem bit off
+        How do I make tailwindcss show 2 fractions on a number, currently price online and price on the desing is not aligning
+        */}
     </div>
   );
 };
