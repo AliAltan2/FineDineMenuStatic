@@ -155,7 +155,6 @@ const iconTypes = {
   fish: Fish,
   fresh: Fresh,
 };
-// ilk 3'ü için çalıştı ama geri kalan hala calısmıyor (soybeans vegan ve tranfat-free)
 
 const IconComponent = ({ name, ...props }) => {
   let Icon = iconTypes[name];

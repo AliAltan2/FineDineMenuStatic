@@ -57,7 +57,7 @@ function MenuBox() {
                     <div key={i._id} className="items-center gap-2">
                       <ItemInstance item={i} />
 
-                      <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-500"></hr>
+                      {/*<hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-500"></hr>*/}
                     </div>
                   ))}
                 </div>
