@@ -19,13 +19,8 @@ const Home: NextPage = () => {
       <MenuBox />
       {/* A Food item, Contains Name, explanation, Price Medium Price Large Price and dietery info, may contain image */}
       {/* TODO 
-        Hook up images to real images,
+        -
         Ask for a proper look, try to make it as close to the design as possible
-        Try to fix the lines , they seem bit off
-        How do I make tailwindcss show 2 fractions on a number, currently price online and price on the desing is not aligning
-        Other than price not showing fractions, the itemInstance seems to be done.
-        Other known issues are : The distance between sub-menu and menu actually starting is too long, it must be reduced.
-        Distance between items can be reduced some pixel without causing overflows,   
         Vat Included does not appear after Sub menu sections because the Database does not have the VAT Included text under it's notes
         */}
     </div>

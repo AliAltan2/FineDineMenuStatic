@@ -4,24 +4,32 @@ import Icon from "../components/icons/icon";
 
 //Utkunun attığı linke bak yeniden https://codesandbox.io/s/old-dust-3tpvve?file=/src/App.js
 
+{
+  /*const myLoader = ({ src, width }) => {
+  return `https://media.finedinemenu.com/${width}x${width}/${src}`;
+};*/
+}
+
 function ItemInstance(item: any) {
   return (
     <div className="">
-      <div className="flex flex-row items-center h-[138px] w-[595px] ">
+      <div className="flex flex-row items-center h-auto w-[595px] ">
+        {" "}
+        {/*The issue here is due to thıs containner being hardcoded, ıt must be iteractable*/}
         <Image
-          src={`https://media.finedinemenu.com/1200x1200/${item?.item?.image}`}
+          src={`https://media.finedinemenu.com/96x96/${item?.item?.image}`}
           alt={""}
           unoptimized={true}
           quality={100}
-          width={96}
-          height={96}
-          className="rounded-md p-1"
+          width="96"
+          height="96"
+          className="rounded-md"
         />
-        <div className="ml-3 h-[96px] ">
+        <div className="ml-3 h-[96px] my-4 ">
           <h2 className="text-base font-Nunito font-bold">
             {item?.item?.name?.en}
           </h2>
-          <h3 className="mb-2 text-sm font-Nunito text-ellipsis">
+          <h3 className="mb-2 text-sm font-Nunito text-ellipsis ">
             {item?.item?.description?.en}
           </h3>
           <div className="mb-[8px] text-sm flex items-center gap-4 font-Nunito">
@@ -39,7 +47,7 @@ function ItemInstance(item: any) {
           <div>
             <h3 className="flex text-sm font-Nunito">
               {item?.item?.prices?.map((itemPriceInfo: any) => (
-                <div className=" flex pr-4 flex-row items-center text-black text-sm gap-x-2 capitalize">
+                <div className=" flex mr-4 flex-row items-center text-black text-sm gap-x-2 capitalize">
                   {itemPriceInfo.definition.en}
                   <div className="text-[#A874F2] text-base items-center">
                     {/*{itemPriceInfo.currencies?.map((localPricing: any) => (
@@ -55,7 +63,6 @@ function ItemInstance(item: any) {
           </div>
         </div>
       </div>
-      <hr className="h-px my-1 bg-gray-200 border-0"></hr>
     </div>
   );
 }
