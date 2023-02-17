@@ -55,7 +55,7 @@ function ItemInstance(item: any) {
           </div>
         </div>
       </div>
-      <hr className="h-px my-8 bg-gray-200 border-0"></hr>
+      <hr className="h-px my-1 bg-gray-200 border-0"></hr>
     </div>
   );
 }

@@ -46,7 +46,7 @@ function MenuBox() {
                       width={563}
                       height={120}
                       style={{}}
-                      className="object-cover rounded-lg h-[120px] w-[563px] "
+                      className="object-cover rounded h-[120px] w-[563px] "
                     />
                   ) : (
                     void 0
