@@ -34,17 +34,19 @@ function MenuBox() {
         {Data.map((post) => {
           return (
             <div key={post._id}>
-              {/*Ternary operator is used to conditionally set the src attribute, depending if the*/}
               {post.children.map((c) => (
                 <div key={post._id}>
                   {/*c.image actually works, but I don't have access to it thus I am using dummy images here*, simply change src with c.image I can't because I don't have access to it !*/}
                   {c.type === "section" && c.parentId === post._id ? (
                     <Image
-                      src={"https://picsum.photos/563/120"}
+                      src={`https://media.finedinemenu.com/1200x1200/${c.image}`}
+                      unoptimized={true}
+                      quality={100}
                       alt={""}
                       width={563}
                       height={120}
-                      className="rounded-lg"
+                      style={{}}
+                      className="object-cover rounded-lg h-[120px] w-[563px] "
                     />
                   ) : (
                     void 0
@@ -53,7 +55,6 @@ function MenuBox() {
                   {c.children.map((i) => (
                     <div key={i._id} className="items-center">
                       <ItemInstance item={i} />
-                      {/**/}
                     </div>
                   ))}
                 </div>
