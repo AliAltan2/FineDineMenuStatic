@@ -20,7 +20,7 @@ function MenuBox() {
                       className="flex flex-col items-center justify-center"
                     >
                       {post.children.map((c) => (
-                        <div key={post._id}>
+                        <div key={post._id} className="my-3">
                           <Image
                             src={`https://media.finedinemenu.com/563x120/${c.image}`}
                             unoptimized={true}
