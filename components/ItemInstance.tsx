@@ -29,10 +29,10 @@ function ItemInstance(item: any) {
         />
         <div className="ml-3 h-[96px] my-4 ">
           <h2 className="text-base font-Nunito font-bold">
-            {item?.item?.name?.en}
+            {item?.item?.name?.en.replace(/(<([^>]+)>)/gi, "")}
           </h2>
           <h3 className="mb-2 text-sm font-Nunito text-ellipsis ">
-            {item?.item?.description?.en}
+            {item?.item?.description?.en.replace(/(<([^>]+)>)/gi, "")}
           </h3>
           <div className="mb-[8px] text-sm flex items-center gap-4 font-Nunito">
             {item?.item?.ingredientWarnings?.map((op: string) => (

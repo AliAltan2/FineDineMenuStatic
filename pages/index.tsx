@@ -6,6 +6,8 @@ import MenuBox from "../components/MenuBox";
 const Home: NextPage = () => {
   return (
     <div className="">
+      {" "}
+      {/*w-[595px] h-[2670px] but the entire menu stickt to the right side if that is the case*/}
       <Head>
         <style>
           @import
