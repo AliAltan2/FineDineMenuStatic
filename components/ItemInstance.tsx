@@ -12,10 +12,12 @@ import Icon from "../components/icons/icon";
 
 function ItemInstance(item: any) {
   return (
-    <div className="">
+    <div className="flex flex-col gap-y-5">
+      {" "}
+      {/*Row gap nedense dinamik olarak uzatmıyor*/}
       <div className="flex flex-row items-center h-auto w-[595px] ">
-        {" "}
         {/*The issue here is due to thıs containner being hardcoded, ıt must be iteractable*/}
+
         <Image
           src={`https://media.finedinemenu.com/96x96/${item?.item?.image}`}
           alt={""}
@@ -23,7 +25,7 @@ function ItemInstance(item: any) {
           quality={100}
           width="96"
           height="96"
-          className="rounded-md"
+          className="rounded-md items-center"
         />
         <div className="ml-3 h-[96px] my-4 ">
           <h2 className="text-base font-Nunito font-bold">
@@ -34,12 +36,9 @@ function ItemInstance(item: any) {
           </h3>
           <div className="mb-[8px] text-sm flex items-center gap-4 font-Nunito">
             {item?.item?.ingredientWarnings?.map((op: string) => (
-              <div
-                key={op}
-                className="grid grid-flow-col space-x-1 items-center justify-center capitalize"
-              >
+              <div key={op} className="flex flex-row items-center ">
                 {op && <Icon name={op}></Icon>}
-                <h3 className="col-span-2 px-1 text-xs">{op}</h3>
+                <h3 className="px-1 text-xs">{op}</h3>
                 {/*There is no 'new' icon I can add or a data piece that would define the existance of this new svg thus I did not made such loop*/}
               </div>
             ))}
@@ -63,6 +62,7 @@ function ItemInstance(item: any) {
           </div>
         </div>
       </div>
+      <hr className=" h-px bg-gray-200 border-0"></hr>
     </div>
   );
 }

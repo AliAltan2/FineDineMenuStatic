@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="grid grid-row-3 justify-items-center items-center p-4">
+    <header className="grid grid-row-3 justify-items-center items-center p-4 w-[595]">
       <Image
         src={Logo}
         alt={""}
