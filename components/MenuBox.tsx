@@ -28,6 +28,7 @@ function MenuBox() {
                             alt={""}
                             width={563}
                             height={120}
+                            priority
                             className="rounded h-[120px] w-[563px] "
                           />
 
