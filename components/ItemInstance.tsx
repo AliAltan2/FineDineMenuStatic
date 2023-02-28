@@ -19,13 +19,13 @@ function ItemInstance(item: any) {
         {/*The issue here is due to thıs containner being hardcoded, ıt must be iteractable*/}
 
         <Image
-          src={`https://media.finedinemenu.com/96x96/${item?.item?.image}`}
+          src={`https://media.finedinemenu.com/${item?.item?.image}`}
           alt={""}
           unoptimized={true}
           quality={100}
           width="96"
           height="96"
-          className="rounded-md items-center"
+          className="object-fit rounded-md items-center max-w-[96px] max-h-[96px]"
         />
         <div className="ml-3 h-[96px] my-4 ">
           <h2 className="text-base font-Nunito font-bold">

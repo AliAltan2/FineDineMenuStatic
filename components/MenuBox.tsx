@@ -19,17 +19,24 @@ function MenuBox() {
                       key={post._id}
                       className="flex flex-col items-center justify-center"
                     >
+                      <div className="flex flex-col items-center justify-center ">
+                        <h1 className="text-xl font-semibold font-Nunito">
+                          {post.name.en}
+                        </h1>
+                        <h1 className="font-[400]">{post.description.en}</h1>
+                        <h3 className="text-gray-300">{post?.note?.en}</h3>
+                      </div>
                       {post.children.map((c) => (
                         <div key={post._id} className="my-3">
                           <Image
-                            src={`https://media.finedinemenu.com/563x120/${c.image}`}
+                            src={`https://media.finedinemenu.com/${c.image}`}
                             unoptimized={true}
                             quality={100}
                             alt={""}
                             width={563}
                             height={120}
                             priority
-                            className="rounded h-[120px] w-[563px] "
+                            className="object-cover rounded h-[120px] w-[563px] "
                           />
 
                           <MenuItem
