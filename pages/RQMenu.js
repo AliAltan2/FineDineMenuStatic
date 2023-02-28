@@ -18,7 +18,7 @@ export const RQMenu = ({ tokenData, menu_id }) => {
     <>
       {console.log(
         data?.data.map((compass) => {
-          return <div>{console.log(compass.id)}</div>;
+          return <div>{console.log(compass)}</div>;
         })
       )}
     </>

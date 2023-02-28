@@ -18,10 +18,11 @@ const Home: NextPage = () => {
           </style>
           <title>Static Menu</title>
         </Head>
+
         <RQToken />
 
         {/*Header consists of the writing, logo and Company Name */}
-        <Header />
+
         {/* MenuBox, contains Text explaining what it is, Vat ,included and further explanation of what it is, may contain an image */}
         <MenuBox />
         {/* A Food item, Contains Name, explanation, Price Medium Price Large Price and dietery info, may contain image */}
